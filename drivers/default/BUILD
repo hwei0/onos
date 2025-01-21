@@ -1,5 +1,4 @@
 COMPILE_DEPS = CORE_DEPS + JACKSON + KRYO + [
-    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//core/store/serializers:onos-core-serializers",
 ]

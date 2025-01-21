@@ -30,6 +30,7 @@ CORE_DEPS = [] + COMPILE + [
     "//core/api:onos-api",
     "//utils/misc:onlab-misc",
     "//utils/osgi:onlab-osgi",
+    "//openflowj:onos-openflowj",
 ]
 JAXB = [
     "@jaxb_api//jar",
@@ -244,6 +245,20 @@ def generated_maven_jars():
             jar_sha256 = "3b23bc3979aec14a952a12aafc483010dc57579775f2ffcacef5256a90eeda02",
             licenses = ["notice"],
             jar_urls = ["https://repo1.maven.org/maven2/jdom/jdom/1.0/jdom-1.0.jar"],        )
+    if "ch_qos_logback_logback-core_123" not in native.existing_rules():
+        java_import_external(
+            name = "ch_qos_logback_logback-core_123",
+            jar_sha256 = None,
+            licenses = ["notice"],
+            jar_urls = ["https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar"]
+        )
+    if "ch_qos_logback_logback-classic_123" not in native.existing_rules():
+        java_import_external(
+            name = "ch_qos_logback_logback-classic_123",
+            jar_sha256 = None,
+            licenses = ["notice"],
+            jar_urls = ["https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-sources.jar"]
+        )
     if "commons_lang" not in native.existing_rules():
         java_import_external(
             name = "commons_lang",
@@ -334,6 +349,13 @@ def generated_maven_jars():
             jar_sha256 = "5a7542ddd374a6a2e1c4f55609a72f926267047acad4213585557526c36628e0",
             licenses = ["notice"],
             jar_urls = ["https://repo1.maven.org/maven2/com/google/guava/guava-testlib/22.0/guava-testlib-22.0.jar"],        )
+    if "com_google_guava_guava_290-jre" not in native.existing_rules():
+        java_import_external(
+            name = "com_google_guava_guava_290-jre",
+            jar_sha256 = None,
+            licenses = ["notice"],
+            jar_urls = ["https://repo1.maven.org/maven2/com/google/guava/guava/29.0-jre/guava-29.0-jre.jar"]
+        )
     if "hamcrest_all" not in native.existing_rules():
         java_import_external(
             name = "hamcrest_all",
@@ -676,6 +698,13 @@ def generated_maven_jars():
             jar_sha256 = "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
             licenses = ["notice"],
             jar_urls = ["https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"],        )
+    if "com_google_code_findbugs_annotations_301u2" not in native.existing_rules():
+        java_import_external(
+            name = "com_google_code_findbugs_annotations_301u2",
+            jar_sha256 = None,
+            licenses = ["notice"],
+            jar_urls = ["https://repo1.maven.org/maven2/com/google/code/findbugs/annotations/3.0.1u2/annotations-3.0.1u2.jar"]
+        )
     if "junit" not in native.existing_rules():
         java_import_external(
             name = "junit",
@@ -742,6 +771,13 @@ def generated_maven_jars():
             jar_sha256 = "f7b399d3a5478a4f3e0d98bd1c9f47766119c66414bc33aa0f6cde0066f24cc2",
             licenses = ["notice"],
             jar_urls = ["https://repo1.maven.org/maven2/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar"],        )
+    if "io_netty_netty-all_4150Final" not in native.existing_rules():
+        java_import_external(
+            name = "io_netty_netty-all_4150Final",
+            jar_sha256 = None,
+            licenses = ["notice"],
+            jar_urls = ["https://repo1.maven.org/maven2/io/netty/netty-all/4.1.50.Final/netty-all-4.1.50.Final.jar"]
+        )
     if "io_netty_netty" not in native.existing_rules():
         java_import_external(
             name = "io_netty_netty",
@@ -1489,6 +1525,8 @@ artifact_map["@commons_beanutils//:commons_beanutils"] = "mvn:commons-beanutils:
 artifact_map["@commons_jxpath//:commons_jxpath"] = "mvn:commons-jxpath:commons-jxpath:jar:1.3"
 artifact_map["@fast_classpath_scanner//:fast_classpath_scanner"] = "mvn:io.github.lukehutch:fast-classpath-scanner:jar:2.21"
 artifact_map["@jdom//:jdom"] = "mvn:jdom:jdom:jar:NON-OSGI:1.0"
+artifact_map["@ch_qos_logback_logback-core_123//:ch_qos_logback_logback-core_123"] = "mvn:ch.qos.logback:logback-core:1.2.3"
+artifact_map["@ch_qos_logback_logback-classic_123//:ch_qos_logback_logback-classic_123"] = "mvn:ch.qos.logback:logback-classic:1.2.3"
 artifact_map["@commons_lang//:commons_lang"] = "mvn:commons-lang:commons-lang:jar:2.6"
 artifact_map["@commons_lang3//:commons_lang3"] = "mvn:org.apache.commons:commons-lang3:jar:3.7"
 artifact_map["@commons_logging//:commons_logging"] = "mvn:commons-logging:commons-logging:jar:1.2"
@@ -1504,6 +1542,7 @@ artifact_map["@gmetric4j//:gmetric4j"] = "mvn:info.ganglia.gmetric4j:gmetric4j:j
 artifact_map["@com_google_code_gson_gson//:com_google_code_gson_gson"] = "mvn:com.google.code.gson:gson:jar:2.7"
 artifact_map["@com_google_guava_guava//:com_google_guava_guava"] = "mvn:com.google.guava:guava:jar:22.0"
 artifact_map["@com_google_guava_guava_testlib//:com_google_guava_guava_testlib"] = "mvn:com.google.guava:guava-testlib:jar:NON-OSGI:22.0"
+artifact_map["@com_google_guava_guava_290-jre//:com_google_guava_guava_290-jre"] = "mvn:com.google.guava:guava:29.9-jre"
 artifact_map["@hamcrest_all//:hamcrest_all"] = "mvn:org.hamcrest:hamcrest-all:jar:NON-OSGI:1.3"
 artifact_map["@hk2_api//:hk2_api"] = "mvn:org.glassfish.hk2:hk2-api:jar:2.5.0-b42"
 artifact_map["@hk2_locator//:hk2_locator"] = "mvn:org.glassfish.hk2:hk2-locator:jar:2.5.0-b42"
@@ -1561,6 +1600,7 @@ artifact_map["@javax_servlet_api//:javax_servlet_api"] = "mvn:javax.servlet:java
 artifact_map["@joda_time//:joda_time"] = "mvn:joda-time:joda-time:jar:2.9.3"
 artifact_map["@jsch//:jsch"] = "mvn:com.jcraft:jsch:jar:NON-OSGI:0.1.53"
 artifact_map["@com_google_code_findbugs_jsr305//:com_google_code_findbugs_jsr305"] = "mvn:com.google.code.findbugs:jsr305:jar:3.0.2"
+artifact_map["@com_google_code_findbugs_annotations_301u2://com_google_code_findbugs_annotations_301u2"] = "mvn:com.google.code.findbugs:annotations:3.0.1u2"
 artifact_map["@junit//:junit"] = "mvn:junit:junit:jar:NON-OSGI:4.12"
 artifact_map["@junit_dep//:junit_dep"] = "mvn:junit:junit:jar:NON-OSGI:4.10"
 artifact_map["@kryo//:kryo"] = "mvn:com.esotericsoftware:kryo:jar:4.0.1"
@@ -1572,6 +1612,7 @@ artifact_map["@metrics_influxdb//:metrics_influxdb"] = "mvn:com.izettle:metrics-
 artifact_map["@metrics_json//:metrics_json"] = "mvn:io.dropwizard.metrics:metrics-json:jar:3.2.2"
 artifact_map["@minimal_json//:minimal_json"] = "mvn:com.eclipsesource.minimal-json:minimal-json:jar:0.9.4"
 artifact_map["@minlog//:minlog"] = "mvn:com.esotericsoftware:minlog:jar:1.3.0"
+artifact_map["@io_netty_netty-all_4150Final//:io_netty_netty-all_4150Final"] = "mvn:io.netty.netty-all:4.1.50.Final"
 artifact_map["@io_netty_netty//:io_netty_netty"] = "mvn:io.netty:netty:jar:3.10.5.Final"
 artifact_map["@io_netty_netty_buffer//:io_netty_netty_buffer"] = "mvn:io.netty:netty-buffer:jar:4.1.35.Final"
 artifact_map["@io_netty_netty_codec//:io_netty_netty_codec"] = "mvn:io.netty:netty-codec:jar:4.1.35.Final"

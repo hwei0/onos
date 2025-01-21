@@ -1,5 +1,4 @@
 COMPILE_DEPS = CORE_DEPS + [
-    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
 ]
 

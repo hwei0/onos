@@ -23,6 +23,7 @@ CORE = UTILS + API + [
     "//drivers/utilities:onos-drivers-utilities",
     "//providers/general/device:onos-providers-general-device",
     "//web/api:onos-rest",
+    "//openflowj:onos-openflowj",
 ]
 
 FEATURES = [

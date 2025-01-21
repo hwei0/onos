@@ -1,5 +1,4 @@
 COMPILE_DEPS = CORE_DEPS + NETTY + JACKSON + [
-    "//openflowj:onos-openflowj",
     "@io_netty_netty_codec//jar",
     "@io_netty_netty_handler//jar",
     "@io_netty_netty_transport//jar",
