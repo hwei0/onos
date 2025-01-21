@@ -1,5 +1,5 @@
 COMPILE_DEPS = CORE_DEPS + NETTY + JACKSON + [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//drivers/default:onos-drivers-default",
     "//apps/optical-model:onos-apps-optical-model",

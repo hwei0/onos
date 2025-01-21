@@ -1,5 +1,5 @@
 COMPILE_DEPS = CORE_DEPS + NETTY + [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//providers/openflow/flow:onos-providers-openflow-flow",
 ]

@@ -39,7 +39,7 @@ JAVADOC_DEPS = CORE_DEPS + KRYO + ATOMIX + REST + CLI + JACKSON + TEST + NETTY +
     "@jersey_server//jar",
     "@jersey_security//jar",
     "@org_apache_felix_scr_bnd//jar",
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "@org_apache_servicemix_bundles_snmp4j//jar",
     "@snmp_core//jar",
     "@mibs_net_snmp//jar",

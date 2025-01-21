@@ -78,7 +78,7 @@ function testOnosBase {
 # on anxillary artifacts, e.g. openflowj, copycat
 function testSnapshotDependencies {
     testOnosBase
-    for artifact in onos-build-conf onos-maven-plugin openflowj atomix copycat; do
+    for artifact in onos-build-conf onos-maven-plugin atomix copycat; do
         testArtifactDependency $artifact
     done
 }

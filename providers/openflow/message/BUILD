@@ -1,5 +1,5 @@
 COMPILE_DEPS = CORE_DEPS + METRICS + [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//apps/cpman/api:onos-apps-cpman-api",
 ]

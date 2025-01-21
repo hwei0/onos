@@ -1,12 +1,12 @@
 COMPILE_DEPS = CORE_DEPS + JACKSON + KRYO + [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//core/store/serializers:onos-core-serializers",
 ]
 
 BUNDLES = [
     ":onos-drivers-default",
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
 ]
 

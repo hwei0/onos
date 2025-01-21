@@ -1,5 +1,5 @@
 COMPILE_DEPS = CORE_DEPS + KRYO + [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//drivers/default:onos-drivers-default",
     "//drivers/utilities:onos-drivers-utilities",
     "//protocols/openflow/api:onos-protocols-openflow-api",

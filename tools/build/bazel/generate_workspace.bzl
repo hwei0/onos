@@ -832,12 +832,6 @@ def generated_maven_jars():
             jar_sha256 = "5e168368fbc250af3c79aa5fef0c3467a2d64e5a7bd74005f25d8399aeb0708d",
             licenses = ["notice"],
             jar_urls = ["https://repo1.maven.org/maven2/org/objenesis/objenesis/2.6/objenesis-2.6.jar"],        )
-    if "openflowj" not in native.existing_rules():
-        java_import_external(
-            name = "openflowj",
-            jar_sha256 = "b5bd490435fd6910ac9d2e0f1b2d71c68d9ff7261bfd0e70c4a0f8ea970c2785",
-            licenses = ["notice"],
-            jar_urls = ["https://repo1.maven.org/maven2/org/onosproject/openflowj/3.2.1.onos/openflowj-3.2.1.onos.jar"],        )
     if "org_osgi_util_function" not in native.existing_rules():
         java_import_external(
             name = "org_osgi_util_function",
@@ -1593,7 +1587,6 @@ artifact_map["@io_netty_netty_codec_http//:io_netty_netty_codec_http"] = "mvn:io
 artifact_map["@io_netty_netty_codec_socks//:io_netty_netty_codec_socks"] = "mvn:io.netty:netty-codec-socks:jar:4.1.35.Final"
 artifact_map["@io_netty_netty_tcnative_boringssl//:io_netty_netty_tcnative_boringssl"] = "mvn:io.netty:netty-tcnative-boringssl-static:jar:2.0.25.Final"
 artifact_map["@objenesis//:objenesis"] = "mvn:org.objenesis:objenesis:jar:2.6"
-artifact_map["@openflowj//:openflowj"] = "mvn:org.onosproject:openflowj:jar:3.2.1.onos"
 artifact_map["@org_osgi_util_function//:org_osgi_util_function"] = "mvn:org.osgi:org.osgi.util.function:jar:1.1.0"
 artifact_map["@org_osgi_util_promise//:org_osgi_util_promise"] = "mvn:org.osgi:org.osgi.util.promise:jar:1.1.1"
 artifact_map["@org_osgi_service_component//:org_osgi_service_component"] = "mvn:org.osgi:org.osgi.service.component:jar:1.4.0"

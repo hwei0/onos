@@ -1,5 +1,5 @@
 BUNDLES = [
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//protocols/openflow/api:onos-protocols-openflow-api",
     "//protocols/openflow/ctl:onos-protocols-openflow-ctl",
     "//providers/openflow/device:onos-providers-openflow-device",

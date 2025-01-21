@@ -2,7 +2,7 @@ COMPILE_DEPS = CORE_DEPS + NETTY + JACKSON + KRYO + CLI + REST + [
     "@io_netty_netty_transport//jar",
     "@io_netty_netty_codec//jar",
     "@io_netty_netty_handler//jar",
-    "@openflowj//jar",
+    "//openflowj:onos-openflowj",
     "//core/store/serializers:onos-core-serializers",
     "//core/common:onos-core-common",
     "//apps/virtual/api:onos-apps-virtual-api",
